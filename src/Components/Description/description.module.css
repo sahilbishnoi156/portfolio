@@ -1,0 +1,54 @@
+.descriptionone {
+    position: relative;
+    width: 43%;
+    text-align: justify;
+    mix-blend-mode: difference;
+}
+.descriptiontwo {
+    width: 43%;
+    position: relative;
+    text-align: justify;
+    align-self: flex-end;
+    mix-blend-mode: difference;
+}
+.descriptionone::after {
+    content: '';
+    position: absolute;
+    background: white;
+    height: 2px;
+    width: 100%;
+    top: -10px;
+    left: 0;
+}
+.descriptiontwo::after {
+    content: '';
+    position: absolute;
+    background: white;
+    height: 2px;
+    width: 100%;
+    top: -10px;
+    left: 0;
+}
+
+.downloadCv{
+    margin-top: 3rem;
+    position: relative;
+    display: flex;
+    align-items: center; 
+    gap: 1rem;
+    cursor: pointer;
+    font-size: 1.8vw;
+}
+.downloadCv span{
+    transform: rotate(-45deg);
+}
+
+.downloadCv::after {
+    content: '';
+    position: absolute;
+    background: white;
+    height: 2px;
+    width: 50%;
+    bottom: 0px;
+    left: 0;
+}

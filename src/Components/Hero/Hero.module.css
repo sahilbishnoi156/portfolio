@@ -1,0 +1,22 @@
+.text {
+    font-weight: 100;
+}
+.text span{
+    position: absolute;
+    transform-origin: 0 96px;
+    left: 50%;
+    top: -0;
+}
+.circle {
+    animation: rotateText 8s linear infinite alternate  ;
+}
+
+@keyframes rotateText {
+    0%{
+        transform: rotate(360deg);
+    }
+    100%{
+        transform: rotate(0deg);
+    }
+    
+}
