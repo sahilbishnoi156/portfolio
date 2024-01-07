@@ -41,8 +41,11 @@
 }
 .downloadCv span{
     transform: rotate(-45deg);
+    transition: .4s;
 }
-
+.downloadCv:hover span{
+    transform: rotate(45deg);
+}
 .downloadCv::after {
     content: '';
     position: absolute;
@@ -51,4 +54,22 @@
     width: 50%;
     bottom: 0px;
     left: 0;
+    transition: .4s;
+}
+.downloadCv::before {
+    content: '';
+    position: absolute;
+    background: white;
+    height: 2px;
+    width: 0;
+    bottom: 0px;
+    right: 50%;
+    transition: .4s .4s;
+}
+.downloadCv:hover::after{
+    width: 0;
+}
+.downloadCv:hover::before{
+    width: 50%;
+    /* transition: .4s 0s; */
 }

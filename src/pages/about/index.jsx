@@ -1,7 +1,12 @@
+import Main from '@/Components/Main/Main'
 import React from 'react'
 
-export default function index() {
+export default function About() {
   return (
-    <div>index</div>
+    <Main>
+      <div>
+      About
+      </div>
+    </Main>
   )
 }

@@ -5,9 +5,7 @@ import Magnetic from "../magnetic";
 
 export default function Header() {
   return (
-    <div
-      className={`p-8 flex items-center justify-between text-gray-300 text-sm mix-blend-difference `}
-    >
+    <div className={`p-8 flex items-center justify-between text-gray-300 text-sm mix-blend-difference `}>
       <Magnetic>
         <Link href={"/"} className={styles.headerLogo}>
           sahil bishnoi
@@ -16,6 +14,9 @@ export default function Header() {
       <ul className="flex items-center justify-center gap-4 ">
         <Magnetic>
           <Link href="/work">work</Link>
+        </Magnetic>
+        <Magnetic>
+          <Link href="/contact">about</Link>
         </Magnetic>
         <Magnetic>
           <Link href="/contact">contact</Link>
