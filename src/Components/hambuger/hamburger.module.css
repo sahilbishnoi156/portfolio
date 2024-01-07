@@ -5,6 +5,7 @@
   pointer-events: none;
 }
 .bounds {
+  mix-blend-mode: difference;
   position: absolute;
   z-index: -10;
   height: 100%;
