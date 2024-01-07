@@ -1,4 +1,4 @@
-import { menuSlide } from "@/pages/animations";
+import { menuSlide } from "@/Components/SideMenu/animations";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
