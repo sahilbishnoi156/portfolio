@@ -1,36 +1,36 @@
-import { menuSlide } from "@/Components/SideMenu/animations";
+import { menuSlide } from "@/Components/Animations/animations";
 import { motion } from "framer-motion";
 import Link from "next/link";
 import React from "react";
 import styles from "./sidemenu.module.css";
 import Magnetic from "../magnetic";
+import Curve from "../Curve/Curve";
+import AnimatedText from "../Reveal/AnimatedText";
 
 export default function SideMenu() {
   return (
     <motion.div
-      className="h-screen w-screen fixed top-0 left-0 z-[1] flex items-center justify-between flex-col px-[12vw] pb-[12vw] pt-[2vw] text-[6vw] text-gray-300"
+      className="h-screen w-screen fixed top-0 left-0 z-[1] flex items-center justify-between flex-col px-[12vw] pb-[12vw] pt-[2vw] text-[6.6vw] text-gray-300"
       variants={menuSlide}
       animate="enter"
       exit="exit"
       initial="initial"
     >
+      <Curve />
       <motion.div
         className="flex items-center justify-center w-full text-[1.2vw]"
-        initial={{ scale: 0 }}
-        animate={{ scale: 1 }}
-        transition={{ duration: 0.1, delay: 0.5 }}
+        initial={{ x: -100, scale: 1 }}
+        animate={{ x: 0, scale: 1 }}
+        transition={{ duration: 1, delay: .5, type:"spring", stiffness:500, damping:5 }}
       >
-        sahil bishnoi
+        <Magnetic>sahil bishnoi</Magnetic>
       </motion.div>
       {[
         ["HOME", "CONTACT"],
         ["WORK", "ABOUT"],
       ].map((arr, ind) => {
         return (
-          <motion.div
-            className="flex items-center gap-[14vw] w-full"
-            key={ind}
-          >
+          <motion.div className="flex items-center gap-[20vw] w-full" key={ind}>
             {arr.map((item, index) => {
               return (
                 <div key={item} className={styles.mainDiv}>
@@ -47,9 +47,10 @@ export default function SideMenu() {
                       delay: (ind + 0.05) * index * 0.2,
                     }}
                   >
-                    
                     <Link
-                      href={`/${(ind === 0 && index ===0) ? "" : item.toLocaleLowerCase()}`}
+                      href={`/${
+                        ind === 0 && index === 0 ? "" : item.toLocaleLowerCase()
+                      }`}
                       className={styles.link}
                     >
                       {item}

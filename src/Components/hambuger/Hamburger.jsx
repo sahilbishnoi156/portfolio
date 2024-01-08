@@ -40,17 +40,15 @@ const Hamburger = React.forwardRef(function Index(props, ref) {
       >
         <Magnetic>
           <div className={styles.burger}>
-            {isActive ? (
-              <RxCross2
-                size={"1.5rem"}
-                style={{ mixBlendMode: "difference" }}
-              />
-            ) : (
-              <HiMenuAlt1
-                size={"1.5rem"}
-                style={{ mixBlendMode: "difference" }}
-              />
-            )}
+            <div className={styles.box}>
+              <div
+                className={`${isActive? styles.active : styles.notActive } ${styles.btn}`}
+              >
+                <span className={styles.span}></span>
+                <span className={styles.span}></span>
+                <span className={styles.span}></span>
+              </div>
+            </div>
             <div className={styles.bounds} ref={ref}></div>
           </div>
         </Magnetic>
