@@ -53,7 +53,7 @@ export default function ProjectCard({ data, indNum }) {
         transformStyle: "preserve-3d",
       }}
       onMouseEnter={() => setIsHovering(true)}
-      className="relative h-[80vh] w-full rounded-xl bg-gradient-to-br from-red-300 to-violet-300 shrink-0 cursor-pointer "
+      className="relative h-[80vh] w-full rounded-xl bg-gradient-to-br from-gray-100 to-gray-300 shrink-0 cursor-pointer "
     >
       <motion.div
         style={{

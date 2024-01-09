@@ -10,7 +10,7 @@ import AnimatedText from "../Reveal/AnimatedText";
 export default function SideMenu() {
   return (
     <motion.div
-      className="h-screen w-screen fixed top-0 left-0 z-[1] flex items-center justify-between flex-col px-[12vw] pb-[12vw] pt-[2vw] text-[6.6vw] text-gray-300"
+      className="h-screen w-screen fixed top-0 left-0 z-[999] flex items-center justify-between flex-col px-[12vw] pb-[12vw] pt-[2vw] text-[6.6vw] text-gray-300"
       variants={menuSlide}
       animate="enter"
       exit="exit"
