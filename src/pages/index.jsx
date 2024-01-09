@@ -6,13 +6,12 @@ import Description from "@/Components/Description/Description";
 import Projects from "@/Components/Projects/Projects";
 import HorizontalText from "@/Components/HorizontalText/HorizontalText";
 import Footer from "@/Components/Footer/Footer";
+import { useAppStore } from "@/StateManagment/zustandLib";
+import TechStack from "@/Components/TechStack/TechStack";
 
 export default function Home() {
-  const [isLoading, setIsLoading] = React.useState(true);
+  const {isLoading} = useAppStore();
   React.useEffect(() => {
-    setTimeout(() => {
-      setIsLoading(false);
-    }, 3000);
     (async () => {
       const Locomotive = (await import("locomotive-scroll")).default;
       const LocomotiveScroll = new Locomotive();
@@ -28,7 +27,7 @@ export default function Home() {
         <Hero />
         <Description />
         <Projects />
-        <HorizontalText />
+        <TechStack/>
         <Footer />
       </Main>
     );

@@ -6,6 +6,7 @@ import { FaArrowDownLong } from "react-icons/fa6";
 import { motion, useInView } from "framer-motion";
 import Reveal from "../Reveal/Reveal";
 import AnimatedText from "../Reveal/AnimatedText";
+import { useCursorStore } from "@/StateManagment/zustandLib";
 
 const ScrollDown = () => {
   const text = React.useRef(null);
@@ -16,7 +17,7 @@ const ScrollDown = () => {
         .split("")
         .map(
           (char, index) =>
-            `<span style="transform:rotate(${index * 12.31}deg)">${char}</span>`
+            `<span style="transform:rotate(${index * 13}deg)">${char}</span>`
         )
         .join("");
 
@@ -25,9 +26,16 @@ const ScrollDown = () => {
   });
   return (
     <div className="h-48 w-48 rounded-full relative flex items-center justify-center text-gray-400">
-      <span className="text-xl">
+      <motion.span
+        className="text-xl"
+        initial={{ y: -5 }}
+        animate={{
+          y: [-5, 5, -5],
+          transition: { duration: 1.5, repeat: Infinity },
+        }}
+      >
         <FaArrowDownLong />
-      </span>
+      </motion.span>
       <div
         className={`h-full w-full absolute text-xl rotate-[15deg] ${styles.circle}`}
       >
@@ -39,16 +47,24 @@ const ScrollDown = () => {
   );
 };
 
+
 export default function Hero() {
+  const { setIsTextHovering }  =  useCursorStore();
+  const mouseEntered = () =>{
+    setIsTextHovering(true)
+  }
+  const mouseLeaved = () =>{
+    setIsTextHovering(false)
+  }
   return (
     <div className="flex flex-col px-[12vw] leading-[6vw] gap-16 mt-6 text-gray-100 mix-blend-difference">
-      <div className="w-full text-[5vw] font-bold tracking-wide">
-        <div className="flex overflow-hidden">
-        <AnimatedText text="HEY!"/>
-        <span>👋</span>
+      <div className="w-full text-[5vw] font-bold tracking-wide" onMouseEnter={mouseEntered} onMouseLeave={mouseLeaved}>
+        <div className="flex overflow-hidden" >
+          <AnimatedText text="HEY!" />
+          <span>👋</span>
         </div>
         <div className="flex items-center overflow-hidden">
-          <AnimatedText text="I&rsquo;M"/>
+          <AnimatedText text="I&rsquo;M" />
           <Image
             src={heroImg}
             height={60}
@@ -58,18 +74,18 @@ export default function Hero() {
             alt="notfound"
             className="rounded-[8rem] h-20 brightness-105 w-[9rem] mx-6"
           ></Image>
-          <AnimatedText text="SAHIL"/>
+          <AnimatedText text="SAHIL" />
         </div>
         <div className="flex">
-          <AnimatedText text="A &ldquo;C"/>
+          <AnimatedText text="A &ldquo;C" />
           <motion.span
-              initial={{ y: 20, opacity: 0 }}
-              whileInView={{ once: true, y: 0, opacity: 1 }}
-              transition={{ duration: 0.6 }}
-              
-              className="inline-block"
-            >🥶
-            </motion.span>
+            initial={{ y: 20, opacity: 0 }}
+            whileInView={{ once: true, y: 0, opacity: 1 }}
+            transition={{ duration: 0.6 }}
+            className="inline-block"
+          >
+            🥶
+          </motion.span>
           <AnimatedText text="Ol&rdquo; DEVELOPER"></AnimatedText>
         </div>
       </div>
@@ -81,6 +97,7 @@ export default function Hero() {
           className="flex flex-col items-end tracking-wide w-[60%]"
           data-scroll
           data-scroll-speed=".06"
+          onMouseEnter={mouseEntered} onMouseLeave={mouseLeaved}
         >
           <div className="flex">
             <AnimatedText text="DEVEL"></AnimatedText>
@@ -91,9 +108,9 @@ export default function Hero() {
           </div>
           <div className="flex">
             <AnimatedText text="NE"></AnimatedText>
-              <span className="text-[5vw]" data-scroll data-scroll-speed=".06">
-                ⚒️
-              </span>
+            <span className="text-[5vw]" data-scroll data-scroll-speed=".06">
+              ⚒️
+            </span>
             <AnimatedText text="TGEN"></AnimatedText>
           </div>
           <p data-scroll data-scroll-speed=".04">

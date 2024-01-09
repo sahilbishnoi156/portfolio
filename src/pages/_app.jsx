@@ -2,6 +2,9 @@ import "@/styles/globals.css";
 import { motion, AnimatePresence } from "framer-motion";
 import { useRouter } from "next/router";
 import { Mali } from "next/font/google";
+import { useAppStore } from "@/StateManagment/zustandLib";
+import React from "react";
+
 
 const mali = Mali({
   subsets: ['latin'],
@@ -9,6 +12,12 @@ const mali = Mali({
 })
 
 export default function App({ Component, pageProps }) {
+  const { setIsLoading } = useAppStore();
+  React.useEffect(()=>{
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  },[setIsLoading])
   const router = useRouter();
   return (
     <AnimatePresence mode="wait">

@@ -1,7 +1,10 @@
 import React from 'react'
+import HorizontalText from '../HorizontalText/HorizontalText'
 
 export default function Footer() {
   return (
-    <div className='h-[60vh] w-screen flex items-center justify-center text-[4vw] border-t-2 relative z-30 bg-[#131212]'></div>
+    <div className='w-screen flex items-center justify-start text-[4vw] bg-[#131212]'>
+      <HorizontalText text="CONTACT ME CONTACT ME CONTACT ME CONTACT ME" rotation={-4}/>
+    </div>
   )
 }
