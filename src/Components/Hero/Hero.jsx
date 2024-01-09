@@ -16,7 +16,7 @@ const ScrollDown = () => {
         .split("")
         .map(
           (char, index) =>
-            `<span style="transform:rotate(${index * 9.31}deg)">${char}</span>`
+            `<span style="transform:rotate(${index * 10.31}deg)">${char}</span>`
         )
         .join("");
 

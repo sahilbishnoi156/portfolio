@@ -14,8 +14,7 @@ export default function Cursor({ stickyElement }) {
   const { isHovering } = useCursorStore();
   const cursorRef = React.useRef(null);
   const [isHovered, setIsHovered] = React.useState(false);
-  let cursorSize = isHovered ? 45 : 20;
-  cursorSize = isHovering ? 60 : 20;
+  let cursorSize = isHovered ? 45 : (isHovering ? 65 : 20);
   const mouse = {
     x: useMotionValue(0),
     y: useMotionValue(0),
@@ -35,7 +34,7 @@ export default function Cursor({ stickyElement }) {
   const manageMouseOver = (e) => {
     setIsHovered(true);
   };
-
+  
   const manageMouseLeave = (e) => {
     setIsHovered(false);
   };
@@ -69,6 +68,8 @@ export default function Cursor({ stickyElement }) {
   
         scale.x.set(1);
         scale.y.set(1);
+
+        animate(cursorRef.current, {rotate:` 0rad`}, {duration: 0})
       }
     };
 
@@ -88,7 +89,7 @@ const template = ({rotate, scaleX, scaleY}) =>{
   return (
     <motion.div
     transformTemplate={template}
-      className={`${styles.cursor} ${!isHovering && "mix-blend-difference"}`}
+      className={`${styles.cursor} ${!isHovering && "mix-blend-difference"} relative`}
       ref={cursorRef}
       style={{
         left: smoothMouse.x,
