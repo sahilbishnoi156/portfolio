@@ -28,28 +28,33 @@ green: #3FAF82
 
 .box {
   position: relative;
+  width: 1.5rem;
+  height: 1.5rem;
 }
 
 .btn {
-  width: 1.5rem;
-  height: 1.5rem;
+  width: 100%;
+  height: 100%;
   cursor: pointer;
 }
 
 .span {
   display: block;
   width: 1.5rem;
-  border-radius: 3px;
-  height: 2px;
+  height: 3px;
   background: #fff;
   transition: all .3s;
   position: relative;
+  border-radius: 10rem;
 }
 
 .span + .span {
   margin-top: 5px;
 }
 
+.btn .span:nth-child(2) {
+  width: 1rem;
+}
 .active .span:nth-child(1) {
   animation: ease .7s top forwards;
 }
@@ -79,19 +84,19 @@ green: #3FAF82
     top: 0;
   }
   50% {
-    top: 7px;
+    top: 8px;
   }
   100% {
-    top: 7px;
+    top: 8px;
   }
 }
 
 @keyframes top-2 {
   0% {
-    top: 7px;
+    top: 8px;
   }
   50% {
-    top: 7px;
+    top: 8px;
   }
   100% {
     top: 0;
@@ -103,19 +108,19 @@ green: #3FAF82
     bottom: 0;
   }
   50% {
-    bottom: 7px;
+    bottom: 7.5px;
   }
   100% {
-    bottom: 7px;
+    bottom: 7.5px;
   }
 }
 
 @keyframes bottom-2 {
   0% {
-    bottom: 7px;
+    bottom: 7.5px;
   }
   50% {
-    bottom: 7px;
+    bottom: 7.5px;
   }
   100% {
     bottom: 0;
@@ -124,21 +129,26 @@ green: #3FAF82
 
 @keyframes scaled {
   50% {
-    transform: scale(0);
+    /* transform: scale(0); */
+    width: .5rem;
   }
   100% {
-    transform: scale(0);
+    width: 0rem;
+    /* transform: scale(0); */
   }
 }
 
 @keyframes scaled-2 {
   0% {
-    transform: scale(0);
+    /* transform: scale(0); */
+    width: 0px;
   }
   50% {
-    transform: scale(0);
+    /* transform: scale(0); */
+    width: 0px;
   }
   100% {
-    transform: scale(1);
+    width: 1rem;
+    /* transform: scale(1); */
   }
 }

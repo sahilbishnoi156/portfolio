@@ -8,11 +8,14 @@ import {
   animate,
   transform,
 } from "framer-motion";
+import { useCursorStore } from "@/StateManagment/zustandLib";
 
 export default function Cursor({ stickyElement }) {
-    const cursorRef = React.useRef(null);
+  const { isHovering } = useCursorStore();
+  const cursorRef = React.useRef(null);
   const [isHovered, setIsHovered] = React.useState(false);
-  const cursorSize = isHovered ? 45 : 20;
+  let cursorSize = isHovered ? 45 : 20;
+  cursorSize = isHovering ? 60 : 20;
   const mouse = {
     x: useMotionValue(0),
     y: useMotionValue(0),
@@ -85,7 +88,7 @@ const template = ({rotate, scaleX, scaleY}) =>{
   return (
     <motion.div
     transformTemplate={template}
-      className={styles.cursor}
+      className={`${styles.cursor} ${!isHovering && "mix-blend-difference"}`}
       ref={cursorRef}
       style={{
         left: smoothMouse.x,
@@ -97,6 +100,9 @@ const template = ({rotate, scaleX, scaleY}) =>{
         width: cursorSize,
         height: cursorSize,
       }}
-    ></motion.div>
+      
+    >
+      {isHovering && "click"}
+    </motion.div>
   );
 }

@@ -1,13 +1,16 @@
 import React from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { FiMousePointer } from "react-icons/fi";
+import { useCursorStore } from "@/StateManagment/zustandLib";
+import Image from "next/image";
 
-export default function ProjectCard({ data }) {
-  const x = useMotionValue(0);
-  const y = useMotionValue(0);
+export default function ProjectCard({ data, indNum }) {
+  const { setIsHovering } = useCursorStore();
+  const cardX = useMotionValue(0);
+  const cardY = useMotionValue(0);
 
-  const mouseXSpring = useSpring(x);
-  const mouseYSpring = useSpring(y);
+  const mouseXSpring = useSpring(cardX);
+  const mouseYSpring = useSpring(cardY);
 
   const rotateX = useTransform(
     mouseYSpring,
@@ -29,45 +32,57 @@ export default function ProjectCard({ data }) {
     const xPct = mouseX / width - 0.5;
     const yPct = mouseY / height - 0.5;
 
-    x.set(xPct);
-    y.set(yPct);
+    cardX.set(xPct);
+    cardY.set(yPct);
   };
 
   const handleMouseLeave = () => {
-    x.set(0);
-    y.set(0);
+    cardX.set(0);
+    cardY.set(0);
+    setIsHovering(false);
   };
 
   return (
     <motion.div
       onMouseMove={handleMouseMove}
+      key={indNum}
       onMouseLeave={handleMouseLeave}
       style={{
         rotateY,
         rotateX,
         transformStyle: "preserve-3d",
       }}
-      data-scroll
-      data-scroll-speed="0.4"
-      className="relative h-[80vh] w-full rounded-xl bg-gradient-to-br from-indigo-300 to-violet-300"
+      onMouseEnter={() => setIsHovering(true)}
+      className="relative h-[80vh] w-full rounded-xl bg-gradient-to-br from-red-300 to-violet-300 shrink-0 cursor-pointer "
     >
-      <div
+      <motion.div
         style={{
           transform: "translateZ(50px)",
           transformStyle: "preserve-3d",
         }}
-        className="absolute inset-4 grid place-content-center rounded-xl bg-white shadow-lg"
+        whileTap={{
+          scale: 1.2,
+        }}
+        className="absolute inset-4 flex items-start pt-16 justify-center rounded-xl bg-transparent"
       >
+        <Image
+          height={1960}
+          width={1080}
+          quality={100}
+          alt="not found"
+          src={data.link}
+          className="absolute top-0 left-0 rounded-xl h-full w-full brightness-75"
+        />
         <div
           style={{
             transform: "translateZ(30px)",
           }}
-          className="font-semibold text-black flex items-center justify-center flex-col"
+          className="font-semibold text-white flex items-center justify-center flex-col "
         >
           <h1>{data.title}</h1>
           <p>{data.description}</p>
         </div>
-      </div>
+      </motion.div>
     </motion.div>
   );
 }

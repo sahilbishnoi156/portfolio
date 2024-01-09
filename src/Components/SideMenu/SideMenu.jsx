@@ -21,7 +21,7 @@ export default function SideMenu() {
         className="flex items-center justify-center w-full text-[1.2vw]"
         initial={{ x: -100, scale: 1 }}
         animate={{ x: 0, scale: 1 }}
-        transition={{ duration: 1, delay: .5, type:"spring", stiffness:500, damping:5 }}
+        transition={{ duration: 1, delay: .5, type:"spring", stiffness:200, damping:5 }}
       >
         <Magnetic>sahil bishnoi</Magnetic>
       </motion.div>
@@ -40,11 +40,12 @@ export default function SideMenu() {
                     animate={{ y: "0px" }}
                     exit={{
                       x: "-2000px",
-                      transition: { duration: 0.9, ease: [0.76, 0, 0.24, 1] },
+                      transition: { duration: 0.9, ease: [0.76, 0, 0.24, 1]},
                     }}
                     transition={{
                       duration: 0.8,
                       delay: (ind + 0.05) * index * 0.2,
+                      type:"spring", stiffness:50, damping:5
                     }}
                   >
                     <Link

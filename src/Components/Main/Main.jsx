@@ -7,7 +7,6 @@ import Hamburger from "../hambuger/Hamburger";
 
 export default function Main({ children }) {
   const stickyElement = React.useRef(null);
-  const stickyElement2 = React.useRef(null);
   
   return (
     <>
