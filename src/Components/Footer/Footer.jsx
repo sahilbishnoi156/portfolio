@@ -1,6 +1,4 @@
 import React from "react";
-import HorizontalText from "../HorizontalText/HorizontalText";
-import Image from "next/image";
 import { FaGithub } from "react-icons/fa";
 import { FaTwitter } from "react-icons/fa";
 import { LuInstagram } from "react-icons/lu";
@@ -49,7 +47,9 @@ export default function Footer() {
           <div
             className="flex items-center justify-center gap-2 w-full"
             onClick={() => {
-              window.scrollTo(0, 0);
+              if (typeof window !== "undefined") {
+                window.scrollTo(0, 0);
+              }
             }}
           >
             <Reveal>Go to top</Reveal>

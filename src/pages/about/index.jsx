@@ -1,3 +1,4 @@
+"use client"
 import Main from "@/Components/Main/Main";
 import AnimatedText from "@/Components/Reveal/AnimatedText";
 import { useScroll, useTransform, motion } from "framer-motion";

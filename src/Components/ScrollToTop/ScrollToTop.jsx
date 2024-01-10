@@ -5,7 +5,10 @@ export default function ScrollToTop() {
   const { setIsEmoji } = useCursorStore();
   React.useEffect(() => {
     setIsEmoji({ shape: 1, hovering: false });
-    window.scrollTo(0, 0);
+    if (typeof window !== "undefined") {
+      // Client-side-only code
+      window.scrollTo(0, 0);
+    }
   }, [setIsEmoji]);
   return null;
 }

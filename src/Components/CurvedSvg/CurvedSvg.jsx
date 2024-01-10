@@ -1,7 +1,7 @@
 import styles from "./CurvedSvg.module.css";
 import { useRef, useEffect } from "react";
 
-export default function CurvedSvg({svgWidth=1}) {
+export default function CurvedSvg({ svgWidth = 1 }) {
   const path = useRef(null);
   let progress = 0;
   let x = 0.5;
@@ -10,10 +10,11 @@ export default function CurvedSvg({svgWidth=1}) {
 
   useEffect(() => {
     setPath(progress);
-  }, []);
+  });
 
   const setPath = (progress) => {
-    const width = window.innerWidth * svgWidth ;
+    
+    const width = typeof window !== "undefined" && (window.innerWidth * svgWidth);
     path.current.setAttributeNS(
       null,
       "d",

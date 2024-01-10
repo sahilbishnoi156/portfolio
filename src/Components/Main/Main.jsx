@@ -8,8 +8,10 @@ import Footer from "../Footer/Footer";
 
 export default function Main({ children }) {
   const stickyElement = React.useRef(null);
-  const isMouseDevice = window.matchMedia("(pointer: fine)").matches;
-
+  const [isMouseDevice, setIsMouseDevice] = React.useState(true);
+  if (typeof window !== "undefined") {
+    setIsMouseDevice(window.matchMedia("(pointer: fine)").matches)
+  }
   return (
     <>
       <Hamburger ref={stickyElement}/>

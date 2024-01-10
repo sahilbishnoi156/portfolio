@@ -102,11 +102,14 @@ export default function Cursor({ stickyElement }) {
     return `rotate(${rotate}) scaleX(${scaleX}) scaleY(${scaleY})`;
   };
   
-  const isMouseDevice = window.matchMedia("(pointer: fine)").matches;
-
-  if (!isMouseDevice) {
-    return null; // Return null if the user is not using a mouse
+  if (typeof window !== "undefined") {
+    // Client-side-only code
+    const isMouseDevice = window.matchMedia("(pointer: fine)").matches;
+    if (!isMouseDevice) {
+      return null; // Return null if the user is not using a mouse
+    }
   }
+
   
   return (
     <motion.div
