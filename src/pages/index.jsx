@@ -8,27 +8,41 @@ import HorizontalText from "@/Components/HorizontalText/HorizontalText";
 import Footer from "@/Components/Footer/Footer";
 import { useAppStore } from "@/StateManagment/zustandLib";
 import TechStack from "@/Components/TechStack/TechStack";
+import ScrollToTop from "@/Components/ScrollToTop/ScrollToTop";
 
 export default function Home() {
-  const {isLoading} = useAppStore();
+  const { isLoading } = useAppStore();
   React.useEffect(() => {
     (async () => {
       const Locomotive = (await import("locomotive-scroll")).default;
-      const LocomotiveScroll = new Locomotive();
+      const LocomotiveScroll = new Locomotive({
+        el: document.querySelector(".smooth-scroll"),
+        smooth: true,
+        smoothMobile: true,
+        mobile: {
+          smooth: true,
+          breakpoint: 0,
+        },
+        tablet: {
+          smooth: true,
+          breakpoint: 0,
+        },
+        smartphone: {
+          smooth: true,
+        },
+      });
     })();
   });
   if (isLoading) {
-    return (
-          <PreLoader />
-    );
+    return <PreLoader />;
   } else {
     return (
       <Main>
+        <ScrollToTop />
         <Hero />
         <Description />
         <Projects />
-        <TechStack/>
-        <Footer />
+        <TechStack />
       </Main>
     );
   }

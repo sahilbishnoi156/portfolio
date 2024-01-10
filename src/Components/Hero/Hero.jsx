@@ -17,7 +17,7 @@ const ScrollDown = () => {
         .split("")
         .map(
           (char, index) =>
-            `<span style="transform:rotate(${index * 13}deg)">${char}</span>`
+            `<span style="transform:rotate(${index * 8.21}deg)">${char}</span>`
         )
         .join("");
 
@@ -47,33 +47,29 @@ const ScrollDown = () => {
   );
 };
 
-
 export default function Hero() {
-  const { setIsTextHovering }  =  useCursorStore();
-  const mouseEntered = () =>{
-    setIsTextHovering(true)
-  }
-  const mouseLeaved = () =>{
-    setIsTextHovering(false)
-  }
   return (
     <div className="flex flex-col px-[12vw] leading-[6vw] gap-16 mt-6 text-gray-100 mix-blend-difference">
-      <div className="w-full text-[5vw] font-bold tracking-wide" onMouseEnter={mouseEntered} onMouseLeave={mouseLeaved}>
-        <div className="flex overflow-hidden" >
+      <div
+        className="w-full text-[5vw] font-bold tracking-wide"
+      >
+        <div className="flex overflow-hidden">
           <AnimatedText text="HEY!" />
           <span>👋</span>
         </div>
         <div className="flex items-center overflow-hidden">
           <AnimatedText text="I&rsquo;M" />
-          <Image
-            src={heroImg}
-            height={60}
-            width={280}
-            data-scroll
-            data-scroll-speed="-0.09"
-            alt="notfound"
-            className="rounded-[8rem] h-20 brightness-105 w-[9rem] mx-6"
-          ></Image>
+          <div data-scroll data-scroll-speed="-0.09">
+            <Reveal>
+              <Image
+                src={heroImg}
+                height={60}
+                width={280}
+                alt="notfound"
+                className="rounded-[8rem] h-20 brightness-105 w-[9rem] mx-6"
+              ></Image>
+            </Reveal>
+          </div>
           <AnimatedText text="SAHIL" />
         </div>
         <div className="flex">
@@ -97,7 +93,6 @@ export default function Hero() {
           className="flex flex-col items-end tracking-wide w-[60%]"
           data-scroll
           data-scroll-speed=".06"
-          onMouseEnter={mouseEntered} onMouseLeave={mouseLeaved}
         >
           <div className="flex">
             <AnimatedText text="DEVEL"></AnimatedText>
@@ -113,9 +108,9 @@ export default function Hero() {
             </span>
             <AnimatedText text="TGEN"></AnimatedText>
           </div>
-          <p data-scroll data-scroll-speed=".04">
-            SH*TS
-          </p>
+          <div >
+            <AnimatedText text="SH*TS" />
+          </div>
         </div>
       </div>
     </div>

@@ -1,9 +1,9 @@
 import React from "react";
 import { useAnimation, useInView, motion } from "framer-motion";
 
-export default function Reveal({ children }) {
+export default function Reveal({ children, objectAmount = 0.3 }) {
   const ref = React.useRef(null);
-  const isInView = useInView(ref, { amount:.5, once: true });
+  const isInView = useInView(ref, { amount:objectAmount, once: true });
 
   const mainControls = useAnimation();
   React.useEffect(() => {
@@ -12,7 +12,7 @@ export default function Reveal({ children }) {
     }
   }, [isInView, mainControls]);
   return (
-    <div ref={ref} className="relative overflow-hidden">
+    <div ref={ref} className="relative  overflow-hidden">
       <motion.div
         variants={{
           hidden: { opacity: 0, y: 20 },

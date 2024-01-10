@@ -12,7 +12,8 @@ import { useCursorStore } from "@/StateManagment/zustandLib";
 import { FaArrowDownLong } from "react-icons/fa6";
 
 export default function Cursor({ stickyElement }) {
-  const { isHovering, isTextHovering, isEmoji } = useCursorStore();
+  const { isHovering, isTextHovering, isEmoji, isVideoHovering, isButtonHovering } =
+    useCursorStore();
   const cursorRef = React.useRef(null);
   const [isHovered, setIsHovered] = React.useState(false);
   const emojiArray = ["💀", "😭", "😒"];
@@ -22,6 +23,10 @@ export default function Cursor({ stickyElement }) {
     ? 65
     : isTextHovering
     ? 120
+    : isVideoHovering
+    ? 200
+    : isButtonHovering
+    ? 0
     : 20;
   const mouse = {
     x: useMotionValue(0),
@@ -80,12 +85,6 @@ export default function Cursor({ stickyElement }) {
 
         scale.x.set(1);
         scale.y.set(1);
-        const angle = Math.atan2(clientY, clientX);
-        animate(
-          cursorRef.current,
-          { rotate: `${angle * 20}rad` },
-          { duration: 0 }
-        );
       }
     };
 
@@ -102,6 +101,13 @@ export default function Cursor({ stickyElement }) {
   const template = ({ rotate, scaleX, scaleY }) => {
     return `rotate(${rotate}) scaleX(${scaleX}) scaleY(${scaleY})`;
   };
+  
+  const isMouseDevice = window.matchMedia("(pointer: fine)").matches;
+
+  if (!isMouseDevice) {
+    return null; // Return null if the user is not using a mouse
+  }
+  
   return (
     <motion.div
       transformTemplate={template}
@@ -109,8 +115,8 @@ export default function Cursor({ stickyElement }) {
         !isHovering &&
         (isTextHovering
           ? "mix-blend-overlay"
-          : isEmoji.hovering
-          ? " mix-blend-ligthen"
+          : isEmoji.hovering || isVideoHovering
+          ? "mix-blend-ligthen"
           : "mix-blend-difference")
       }  relative`}
       ref={cursorRef}
@@ -126,11 +132,25 @@ export default function Cursor({ stickyElement }) {
       }}
     >
       {isHovering ? (
-        <FaArrowDownLong />
+        <div className="rotate-[140deg] opacity-70">
+          <FaArrowDownLong size={18} />
+        </div>
+      ) : isEmoji.hovering ? (
+        <div className="text-[6vw]">{emojiArray[isEmoji.shape - 1]}</div>
       ) : (
-        isEmoji.hovering && (
-          <div className="text-[6vw]">{emojiArray[isEmoji.shape - 1]}</div>
-        )
+        <></>
+      )}
+      {isVideoHovering && (
+        <video
+          width="400"
+          height="400"
+          className="rounded-full h-full w-full object-cover"
+          autoPlay
+          loop
+          muted
+        >
+          <source src="/images/mindblown.mp4" type="video/mp4" />
+        </video>
       )}
     </motion.div>
   );

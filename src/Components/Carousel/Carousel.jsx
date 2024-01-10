@@ -3,6 +3,7 @@ import { useRef } from "react";
 import { FaArrowDownLong } from "react-icons/fa6";
 import styles from "./carousel.module.css";
 import { useCursorStore } from "@/StateManagment/zustandLib";
+import Reveal from "../Reveal/Reveal";
 
 const HorizontalScrollCarousel = () => {
   const { setIsEmoji } = useCursorStore();
@@ -58,6 +59,8 @@ const HorizontalScrollCarousel = () => {
 const Card = ({ card }) => {
   return (
     <div key={card.id} className="h-[80vh] w-[40vw]">
+      <Reveal>
+
       <div className="h-[70vh] w-full bg-black rounded-2xl"></div>
       <div className="flex items-center justify-start gap-4 mt-6 pl-5">
         <motion.button
@@ -66,7 +69,7 @@ const Card = ({ card }) => {
           whileTap={{
             scale: 0.9,
           }}
-        >
+          >
           Visit
           <span className="-rotate-[135deg]">
             <FaArrowDownLong />
@@ -75,10 +78,11 @@ const Card = ({ card }) => {
         <button
           className={`rounded-full border-2 px-4 py-1 flex items-center justify-center gap-2 ${styles.button}`}
           data-content="More"
-        >
+          >
           More
         </button>
       </div>
+          </Reveal>
     </div>
   );
 };

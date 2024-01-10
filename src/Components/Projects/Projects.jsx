@@ -10,9 +10,9 @@ import Magnetic from "../magnetic";
 const ProjectsHeader = () => {
   return (
     <div className="w-full text-[6vw] font-semibold flex flex-col leading-[7vw] px-[12vw] mb-24">
-      <AnimatedText className="text-[7vw]" text="VISUAL"></AnimatedText>
+      <AnimatedText className="text-[7vw]" text="VISUAL" childrenDelay={0.02}></AnimatedText>
       <div className="self-end flex items-end">
-        <AnimatedText text="EXPERIMENTS"></AnimatedText>
+        <AnimatedText text="EXPERIMENTS" childrenDelay={0.05}></AnimatedText>
         <span className="text-xl ml-36 text-gray-400 mb-2">2023</span>
       </div>
     </div>

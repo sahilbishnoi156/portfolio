@@ -13,7 +13,7 @@
   width: 100%;
   border-radius: 10rem;
   bottom: 0;
-  left: -100%;
+  left: -120%;
   background: white;
   transition: 1s;
   margin-top: 10px;
@@ -25,7 +25,7 @@
   width: 100%;
   border-radius: 10rem;
   top: 0;
-  right: -100%;
+  right: -120%;
   background: white;
   transition: 1s;
 }

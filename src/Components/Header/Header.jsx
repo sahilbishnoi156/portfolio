@@ -16,7 +16,7 @@ export default function Header() {
           <Link href="/work">work</Link>
         </Magnetic>
         <Magnetic>
-          <Link href="/contact">about</Link>
+          <Link href="/about">about</Link>
         </Magnetic>
         <Magnetic>
           <Link href="/contact">contact</Link>

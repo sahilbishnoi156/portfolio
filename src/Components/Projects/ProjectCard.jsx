@@ -3,6 +3,7 @@ import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
 import { FiMousePointer } from "react-icons/fi";
 import { useCursorStore } from "@/StateManagment/zustandLib";
 import Image from "next/image";
+import Reveal from "../Reveal/Reveal";
 
 export default function ProjectCard({ data, indNum }) {
   const { setIsHovering } = useCursorStore();
@@ -43,46 +44,48 @@ export default function ProjectCard({ data, indNum }) {
   };
 
   return (
-    <motion.div
-      onMouseMove={handleMouseMove}
-      key={indNum}
-      onMouseLeave={handleMouseLeave}
-      style={{
-        rotateY,
-        rotateX,
-        transformStyle: "preserve-3d",
-      }}
-      onMouseEnter={() => setIsHovering(true)}
-      className="relative h-[80vh] w-full rounded-xl bg-gradient-to-br from-gray-100 to-gray-300 shrink-0 cursor-pointer "
-    >
+    <Reveal objectAmount={0.1}>
       <motion.div
+        onMouseMove={handleMouseMove}
+        key={indNum}
+        onMouseLeave={handleMouseLeave}
         style={{
-          transform: "translateZ(50px)",
+          rotateY,
+          rotateX,
           transformStyle: "preserve-3d",
         }}
-        whileTap={{
-          scale: 1.2,
-        }}
-        className="absolute inset-4 flex items-start pt-16 justify-center rounded-xl bg-transparent"
+        onMouseEnter={() => setIsHovering(true)}
+        className="relative h-[80vh] w-full rounded-xl bg-gradient-to-br from-gray-100 to-gray-300 shrink-0 cursor-pointer "
       >
-        <Image
-          height={1960}
-          width={1080}
-          quality={100}
-          alt="not found"
-          src={data.link}
-          className="absolute top-0 left-0 rounded-xl h-full w-full brightness-75"
-        />
-        <div
+        <motion.div
           style={{
-            transform: "translateZ(30px)",
+            transform: "translateZ(50px)",
+            transformStyle: "preserve-3d",
           }}
-          className="font-semibold text-white flex items-center justify-center flex-col "
+          whileTap={{
+            scale: 1.2,
+          }}
+          className="absolute inset-4 flex items-start pt-16 justify-center rounded-xl bg-transparent"
         >
-          <h1>{data.title}</h1>
-          <p>{data.description}</p>
-        </div>
+          <Image
+            height={1960}
+            width={1080}
+            quality={100}
+            alt="not found"
+            src={data.link}
+            className="absolute top-0 left-0 rounded-xl h-full w-full brightness-75"
+          />
+          <div
+            style={{
+              transform: "translateZ(30px)",
+            }}
+            className="font-semibold text-white flex items-center justify-center flex-col "
+          >
+            <h1>{data.title}</h1>
+            <p>{data.description}</p>
+          </div>
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </Reveal>
   );
 }

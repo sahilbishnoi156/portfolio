@@ -4,7 +4,9 @@ import React from 'react'
 export default function Index() {
   return (
     <Main>
-        Contact
+        <div className='h-[60vh]'>
+          CONTACT
+        </div>
     </Main>
   )
 }
