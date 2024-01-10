@@ -24,22 +24,22 @@ export default function Footer() {
             onMouseLeave={() => setIsButtonHovering(false)}
           >
             <Magnetic>
-              <a href="">
+              <a href="https://github.com/sahilbishnoi156" target="_blank">
                 <FaGithub className="hover:scale-150 hover:text-violet-500 duration-200" />
               </a>
             </Magnetic>
             <Magnetic>
-              <a href="">
+              <a href="www.linkedin.com/in/sahil-poonia" target="_blank">
                 <FaLinkedinIn className="hover:scale-150 hover:text-violet-500 duration-200" />
               </a>
             </Magnetic>
             <Magnetic>
-              <a href="">
+              <a href="https://www.instagram.com/s.ahilbishnoi_/" target="_blank">
                 <LuInstagram className="hover:scale-150 hover:text-violet-500 duration-200"  />
               </a>
             </Magnetic>
             <Magnetic>
-              <a href="">
+              <a href="https://twitter.com/SahilBi59723409" target="_blank">
                 <FaTwitter className="hover:scale-150 hover:text-violet-500 duration-200" />
               </a>
             </Magnetic>

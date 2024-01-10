@@ -49,7 +49,7 @@ export default function AnimatedText({
     }
 
     return () => clearTimeout(timeout);
-  }, [isInView]);
+  }, [isInView, controls, repeatDelay]);
 
   return (
     <Wrapper className={className}>
