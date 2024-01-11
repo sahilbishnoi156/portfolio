@@ -44,8 +44,8 @@ const LinkDiv = ({ data }) => {
 const linkArray = [
   { title: "Contact", logo: IoCall, link:"8094229729" },
   { title: "Email", logo: MdEmail,  link:"sahilbishnoi170@gmail.com" },
-  { title: "Linkdin", logo: FaLinkedinIn, link:"www.linkedin.com/in/sahil-poonia" },
-  { title: "Instagram", logo: LuInstagram, link:"https://www.instagram.com/s.ahilbishnoi_/" },
+  { title: "Linkdin", logo: FaLinkedinIn, link:"https://www.linkedin.com/in/sahil-poonia" },
+  { title: "Instagram", logo: LuInstagram, link:"https://www.instagram.com/s.ahilbishnoi_/?utm_source=qr" },
   { title: "Twitter", logo: FaTwitter, link:"https://twitter.com/SahilBi59723409" },
   { title: "Github", logo: FaGithub, link:"https://github.com/sahilbishnoi156" },
 ];
