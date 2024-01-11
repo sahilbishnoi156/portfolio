@@ -6,11 +6,16 @@ import AnimatedText from "../Reveal/AnimatedText";
 import ProjectCard from "./ProjectCard";
 import Link from "next/link";
 import Magnetic from "../magnetic";
+import Reveal from "../Reveal/Reveal";
 
 const ProjectsHeader = () => {
   return (
     <div className="w-full text-[6vw] font-semibold flex flex-col leading-[7vw] px-[12vw] mb-24">
-      <AnimatedText className="text-[7vw]" text="VISUAL" childrenDelay={0.02}></AnimatedText>
+      <AnimatedText
+        className="text-[7vw]"
+        text="VISUAL"
+        childrenDelay={0.02}
+      ></AnimatedText>
       <div className="self-end flex items-end">
         <AnimatedText text="EXPERIMENTS" childrenDelay={0.05}></AnimatedText>
         <span className="text-xl ml-36 text-gray-400 mb-2">2023</span>
@@ -32,7 +37,9 @@ export default function Projects() {
               data-scroll-speed={`0.${index + 2}`}
               className="w-full"
             >
-              <ProjectCard data={item} indNum={index} />
+              <Reveal objectAmount={0.1}>
+                <ProjectCard data={item} indNum={index} />
+              </Reveal>
             </div>
           );
         })}

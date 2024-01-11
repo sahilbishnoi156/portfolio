@@ -44,7 +44,6 @@ export default function ProjectCard({ data, indNum }) {
   };
 
   return (
-    <Reveal objectAmount={0.1}>
       <motion.div
         onMouseMove={handleMouseMove}
         key={indNum}
@@ -86,6 +85,5 @@ export default function ProjectCard({ data, indNum }) {
           </div>
         </motion.div>
       </motion.div>
-    </Reveal>
   );
 }

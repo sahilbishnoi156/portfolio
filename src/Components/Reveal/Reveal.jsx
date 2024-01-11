@@ -12,11 +12,11 @@ export default function Reveal({ children, objectAmount = 0.3 }) {
     }
   }, [isInView, mainControls]);
   return (
-    <div ref={ref} className="relative  overflow-hidden">
+    <div ref={ref} className="relative">
       <motion.div
         variants={{
-          hidden: { opacity: 0, y: 20 },
-          visible: { opacity: 1, y: 0 },
+          hidden: { opacity: 0, y: 20, },
+          visible: { opacity: 1, y: 0, },
         }}
         initial='hidden'
         animate={mainControls}
