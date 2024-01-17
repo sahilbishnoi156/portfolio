@@ -1,11 +1,9 @@
 .descriptionone {
     position: relative;
-    width: 43%;
     text-align: justify;
     mix-blend-mode: difference;
 }
 .descriptiontwo {
-    width: 43%;
     position: relative;
     text-align: justify;
     align-self: flex-end;
@@ -31,13 +29,11 @@
 }
 
 .downloadCv{
-    margin-top: 3rem;
     position: relative;
     display: flex;
     align-items: center; 
     gap: 1rem;
     cursor: pointer;
-    font-size: 1.8vw;
 }
 .downloadCv span{
     transform: rotate(-45deg);
@@ -51,8 +47,8 @@
     position: absolute;
     background: white;
     height: 2px;
-    width: 50%;
-    bottom: 0px;
+    width: 48%;
+    bottom: -5px;
     left: 0;
     transition: .4s;
 }
@@ -62,7 +58,7 @@
     background: white;
     height: 2px;
     width: 0;
-    bottom: 0px;
+    bottom: -5px;
     right: 50%;
     transition: .4s .4s;
 }

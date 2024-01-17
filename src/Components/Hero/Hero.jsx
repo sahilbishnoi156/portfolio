@@ -25,7 +25,7 @@ const ScrollDown = () => {
     }
   });
   return (
-    <div className="h-48 w-48 rounded-full relative flex items-center justify-center text-gray-400">
+    <div className="sm:h-48 sm:w-48 h-8 w-8 rounded-full relative flex items-center justify-center text-gray-400">
       <motion.span
         className="text-xl"
         initial={{ y: -5 }}
@@ -37,7 +37,7 @@ const ScrollDown = () => {
         <FaArrowDownLong />
       </motion.span>
       <div
-        className={`h-full w-full absolute text-xl rotate-[15deg] ${styles.circle}`}
+        className={`h-full w-full absolute text-xl rotate-[15deg] sm:block hidden ${styles.circle}`}
       >
         <p ref={text} className={styles.text}>
           SCROLL DOWN - SCROLL DOWN -
@@ -49,15 +49,15 @@ const ScrollDown = () => {
 
 export default function Hero() {
   return (
-    <div className="flex flex-col px-[12vw] leading-[6vw] gap-16 mt-6 text-gray-100 mix-blend-difference">
+    <div className="flex flex-col xl:px-[10vw] md:px-[9vw] px-[4vw] xl:leading-[7vw] leading-[10vw] gap-4 mt-6 text-gray-100 mix-blend-difference">
       <div
-        className="w-full text-[5vw] font-bold tracking-wide"
+        className="w-full md:text-[6vw] text-[7vw] font-bold tracking-wide"
       >
-        <div className="flex overflow-hidden">
+        <div className="flex overflow-hidden md:text-[6vw] text-[9vw]">
           <AnimatedText text="HEY!" />
           <span>👋</span>
         </div>
-        <div className="flex items-center overflow-hidden">
+        <div className="flex items-center overflow-hidden md:text-[6vw] text-[9vw]">
           <AnimatedText text="I&rsquo;M" />
           <div data-scroll data-scroll-speed="-0.09">
             <Reveal>
@@ -66,7 +66,7 @@ export default function Hero() {
                 height={60}
                 width={280}
                 alt="notfound"
-                className="rounded-[8rem] h-20 brightness-105 w-[9rem] mx-6"
+                className="rounded-[8rem] h-[6vw] brightness-105 w-[10vw] xl:mx-6 md:mx-4 mx-2"
               ></Image>
             </Reveal>
           </div>
@@ -90,7 +90,7 @@ export default function Hero() {
           <ScrollDown />
         </div>
         <div
-          className="flex flex-col items-end tracking-wide w-[60%]"
+          className="flex flex-col items-end tracking-wide sm:w-[60%] w-[90%] sm:text-[6vw] text-[9vw]"
           data-scroll
           data-scroll-speed=".06"
         >

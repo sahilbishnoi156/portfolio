@@ -17,7 +17,7 @@ export default function Work() {
     <Main>
       <ScrollToTop />
       <Carousel />
-      <ProjectsDesc />
+      <ProjectsDesc/>
       <div
         onMouseEnter={() => setIsVideoHovering(true)}
         onMouseLeave={() => setIsVideoHovering(false)}
@@ -34,7 +34,7 @@ export default function Work() {
       </div>
       <div className="w-full flex items-center justify-center text-[8vw]">
         <div className="w-9/12 flex flex-col">
-          <div className="flex items-center gap-16">
+          <div className="flex items-center md:gap-16 gap-4">
             <AnimatedText text="LET'S" />
             <AnimatedText text="WORK" />
           </div>

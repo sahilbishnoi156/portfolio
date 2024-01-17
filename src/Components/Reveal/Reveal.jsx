@@ -7,9 +7,13 @@ export default function Reveal({ children, objectAmount = 0.3 }) {
 
   const mainControls = useAnimation();
   React.useEffect(() => {
+    const isBrowser = typeof window !== 'undefined';
+  if (isBrowser) {
+    // Your client-side code here
     if (isInView) {
       mainControls.start("visible");
     }
+  }
   }, [isInView, mainControls]);
   return (
     <div ref={ref} className="relative">

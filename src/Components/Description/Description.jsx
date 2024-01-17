@@ -5,12 +5,12 @@ import Reveal from "../Reveal/Reveal";
 
 export default function Description() {
   return (
-    <div className={`flex flex-col px-[12vw] text-[1.5vw] py-32 gap-24`}>
-      <div className={styles.descriptionone}>
+    <div className={`flex flex-col xl:px-[10vw] md:px-[9vw] px-[4vw] sm:text-[1.5vw] text-[3vw] xl:py-32 md:py-28 sm:py-24 py-16 xl:gap-24 md:gap-20 sm:gap-16 gap-12`}>
+      <div className={`${styles.descriptionone} md:w-[43%] w-[73%] `}>
         <Reveal>
           I&lsquo;M SAHIL BISHNOI, AN INTERACTIVE DESIGNER WITH EXPERIENCE IN
           ART DIRECTION AND GRAPHIC DESIGN.
-          <p className={styles.downloadCv}>
+          <p className={`${styles.downloadCv} sm:text-[1.8vw] text-[3vw] mt-6`}>
             DOWNLOAD CV{" "}
             <span>
               <FaArrowDownLong />
@@ -18,7 +18,7 @@ export default function Description() {
           </p>
         </Reveal>
       </div>
-      <div className={styles.descriptiontwo}>
+      <div className={`${styles.descriptiontwo} md:w-[43%] w-[73%]`}>
         <Reveal>
           I&lsquo;M SAHIL BISHNOI, AN INTERACTIVE DESIGNER WITH EXPERIENCE IN
           ART DIRECTION AND GRAPHIC DESIGN.

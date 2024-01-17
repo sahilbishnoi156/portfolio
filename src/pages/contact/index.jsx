@@ -26,7 +26,7 @@ const LinkDiv = ({ data }) => {
           <div className="ml-4">{data.title}</div>
           <div className="mr-4 flex items-center justify-center gap-4">
             {data.title === "Contact" && data.link}
-            <Icon />
+            <Icon color={'lightblue'} />
           </div>
         </a> :
         <div className="absolute h-full w-full bg-white top-0 flex items-center justify-between left-0 text-black scale-y-0 origin-center group-hover:scale-100 duration-200">
@@ -52,7 +52,7 @@ const linkArray = [
 
 const SocialLinks = () => {
   return (
-    <div className="w-screen text-[5vw] divide-y-2 divide-gray-400 mt-6 border-y-2 border-gray-400">
+    <div className="w-screen md:text-[5vw] text-[7vw] divide-y-2 divide-gray-400 mt-6 border-y-2 border-gray-400">
       {linkArray.map((item, index) => {
         return <LinkDiv data={item} key={index} />;
       })}
@@ -63,13 +63,13 @@ export default function Index() {
   const { setIsButtonHovering } = useCursorStore();
   return (
     <Main>
-      <div className="flex items-center justify-center px-32">
-        <div className="text-[4vw] mb-16">
+      <div className="flex items-center justify-center">
+        <div className="md:text-[4vw] text-[6vw] md:mb-16 mb-6">
           <AnimatedText text={`CONTACT DETAILS`} childrenDelay={0.009} />
         </div>
       </div>
       <SocialLinks />
-      <div className="flex items-center justify-center my-20">
+      <div className="flex items-center justify-center my-20 px-4 text-center">
         <AnimatedText
           text={`Let's work together and build something amazing.`}
           childrenDelay={0.009}
@@ -78,7 +78,7 @@ export default function Index() {
       <div className="flex items-center justify-center mb-16">
         <Magnetic>
           <button
-            className="w-56 h-56 bg-white rounded-full text-black font-extrabold text-[1.5vw]"
+            className="w-56 h-56 bg-white rounded-full text-black font-extrabold xl:text-[1.5vw] md:text-[2.5vw] text-[6vw]"
             onMouseEnter={() => setIsButtonHovering(true)}
             onMouseLeave={() => setIsButtonHovering(false)}
           >

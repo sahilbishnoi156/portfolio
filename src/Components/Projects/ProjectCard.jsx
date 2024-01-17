@@ -54,7 +54,7 @@ export default function ProjectCard({ data, indNum }) {
           transformStyle: "preserve-3d",
         }}
         onMouseEnter={() => setIsHovering(true)}
-        className="relative h-[80vh] w-full rounded-xl bg-gradient-to-br from-gray-100 to-gray-300 shrink-0 cursor-pointer "
+        className="relative xl:h-[80vh] md:h-[60vh] sm:h-[50vh] h-[30vh] w-full rounded-xl bg-gradient-to-br from-gray-100 to-gray-300 shrink-0 cursor-pointer "
       >
         <motion.div
           style={{
@@ -64,7 +64,7 @@ export default function ProjectCard({ data, indNum }) {
           whileTap={{
             scale: 1.2,
           }}
-          className="absolute inset-4 flex items-start pt-16 justify-center rounded-xl bg-transparent"
+          className="absolute inset-2 flex items-start pt-16 justify-center rounded-xl bg-transparent"
         >
           <Image
             height={1960}
@@ -72,18 +72,10 @@ export default function ProjectCard({ data, indNum }) {
             quality={100}
             alt="not found"
             src={data.link}
-            className="absolute top-0 left-0 rounded-xl h-full w-full brightness-75"
+            className="absolute top-0 left-0 rounded-xl h-full w-full brightness-75 object-cover"
           />
-          <div
-            style={{
-              transform: "translateZ(30px)",
-            }}
-            className="font-semibold text-white flex items-center justify-center flex-col "
-          >
-            <h1>{data.title}</h1>
-            <p>{data.description}</p>
-          </div>
         </motion.div>
+          
       </motion.div>
   );
 }

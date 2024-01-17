@@ -10,7 +10,7 @@ import Reveal from "../Reveal/Reveal";
 
 const ProjectsHeader = () => {
   return (
-    <div className="w-full text-[6vw] font-semibold flex flex-col leading-[7vw] px-[12vw] mb-24">
+    <div className="w-full text-[6vw] font-semibold flex flex-col leading-[7vw] xl:px-[10vw] md:px-[9vw] px-[4vw] mb-24">
       <AnimatedText
         className="text-[7vw]"
         text="VISUAL"
@@ -18,7 +18,9 @@ const ProjectsHeader = () => {
       ></AnimatedText>
       <div className="self-end flex items-end">
         <AnimatedText text="EXPERIMENTS" childrenDelay={0.05}></AnimatedText>
-        <span className="text-xl ml-36 text-gray-400 mb-2">2023</span>
+        <span className="md:text-xl text-xs ml-28 text-gray-400 mb-2">
+          2023
+        </span>
       </div>
     </div>
   );
@@ -28,7 +30,7 @@ export default function Projects() {
   return (
     <div className="" data-scroll-container>
       <ProjectsHeader />
-      <div className="flex flex-col items-center justify-center px-[10vw]">
+      <div className="flex flex-col items-center justify-center xl:px-[10vw] md:px-[9vw] px-[4vw] gap-16">
         {data.slice(0, 2)?.map((item, index) => {
           return (
             <div
@@ -40,12 +42,16 @@ export default function Projects() {
               <Reveal objectAmount={0.1}>
                 <ProjectCard data={item} indNum={index} />
               </Reveal>
+              <div className="font-semibold text-white flex items-center justify-center flex-col mt-6" >
+                <h1>{item.title}</h1>
+                <p>{item.description}</p>
+              </div>
             </div>
           );
         })}
       </div>
       <div
-        className="w-full flex items-center justify-center"
+        className="w-full flex items-center justify-center mt-12"
         data-scroll
         data-scroll-speed={`0.2`}
       >

@@ -3,9 +3,9 @@ import AnimatedText from "../Reveal/AnimatedText";
 import Reveal from "../Reveal/Reveal";
 import styles from "./project.module.css";
 
-export default function ProjectsDesc() {
+export default function ProjectsDesc({className}) {
   return (
-    <div className={styles.container}>
+    <div className={`${styles.container} ${className} sm:flex hidden`}>
       <div className={styles.body}>
         <CurvedSvg svgWidth={0.7} />
         <div className={styles.description}>

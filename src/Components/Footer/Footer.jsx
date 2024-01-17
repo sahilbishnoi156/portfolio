@@ -14,7 +14,7 @@ export default function Footer() {
   return (
     <Reveal>
       <div className="w-screen border-t-[1px] py-12">
-        <div className="flex items-center justify-between w-screen h-full">
+        <div className="flex items-center justify-between w-screen h-full sm:flex-row flex-col gap-6">
           <div className="w-full flex items-center justify-center">
             <AnimatedText text={`Sahil Bishnoi`} childrenDelay={0.01} />
           </div>
@@ -45,7 +45,7 @@ export default function Footer() {
             </Magnetic>
           </div>
           <div
-            className="flex items-center justify-center gap-2 w-full"
+            className="items-center justify-center gap-2 w-full sm:flex hidden"
             onClick={() => {
               if (typeof window !== "undefined") {
                 window.scrollTo(0, 0);
@@ -58,7 +58,7 @@ export default function Footer() {
             </span>
           </div>
         </div>
-        <div className="h-full flex items-end justify-center pt-32">
+        <div className="h-full flex items-end justify-center sm:pt-32 pt-24">
           <AnimatedText
             text={`Made with love for great people`}
             childrenDelay={0.01}
