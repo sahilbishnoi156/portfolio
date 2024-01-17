@@ -1,9 +1,13 @@
+/* eslint-disable @next/next/no-img-element */
 import { motion, useTransform, useScroll } from "framer-motion";
 import { Fragment, useRef } from "react";
 import { FaArrowDownLong } from "react-icons/fa6";
 import styles from "./carousel.module.css";
 import { useCursorStore } from "@/StateManagment/zustandLib";
 import Reveal from "../Reveal/Reveal";
+import { data } from "../Projects/projectData";
+import Link from "next/link";
+
 
 const Carousel = () => {
   const { setIsEmoji } = useCursorStore();
@@ -17,9 +21,9 @@ const Carousel = () => {
     <div>
       <div ref={targetRef} className="relative h-[300vh] md:block hidden">
         <div className="sticky top-0 flex items-center h-screen overflow-hidden">
-          <motion.div style={{ x }} className="flex gap-4">
-            {cards.map((card) => {
-              return <Card card={card} key={card.id} />;
+          <motion.div style={{ x }} className="flex gap-8">
+            {data.map((card, index) => {
+              return <Card card={card} key={card.id}  />;
             })}
             <div
               className="h-[70vh] w-[20vw] flex items-center justify-center text-2xl"
@@ -54,7 +58,7 @@ const Carousel = () => {
         </div>
       </div>
         <div className="flex gap-4 md:hidden flex-col w-screen overflow-scroll px-4">
-          {cards.map((card) => {
+          {data.map((card, index) => {
             return <Card card={card} key={`${card.id}`} />;
           })}
         </div>
@@ -64,9 +68,11 @@ const Carousel = () => {
 
 const Card = ({ card }) => {
   return (
-    <div key={card.id} className="md:h-[80vh] sm:h-[70vh] h-[40vh] md:w-[40vw] w-full">
+    <Link key={card.id} href={`/work/${card.id}`} className="md:h-[80vh] sm:h-[70vh] h-[40vh] md:w-[70vw] w-full">
       <Reveal>
-        <div className="md:h-[70vh] sm:h-[60vh] h-[30vh] w-full bg-white rounded-2xl"></div>
+        <div className="md:h-[70vh] sm:h-[60vh] h-[30vh] w-full  rounded-2xl">
+          <img src={card.link} alt="not found" className="h-full w-full rounded-2xl object-cover" />
+        </div>
         <div className="flex items-center justify-start gap-4 mt-6 pl-5">
           <motion.button
             className={`rounded-full border-2 px-4 py-1 flex items-center justify-center gap-2 ${styles.button}`}
@@ -88,46 +94,8 @@ const Card = ({ card }) => {
           </button>
         </div>
       </Reveal>
-    </div>
+    </Link>
   );
 };
 
 export default Carousel;
-
-const cards = [
-  {
-    url: "/images/suffererBg.png",
-    title: "Title 1",
-    id: 1,
-  },
-  {
-    url: "/imgs/abstract/2.jpg",
-    title: "Title 2",
-    id: 2,
-  },
-  {
-    url: "/imgs/abstract/3.jpg",
-    title: "Title 3",
-    id: 3,
-  },
-  {
-    url: "/imgs/abstract/4.jpg",
-    title: "Title 4",
-    id: 4,
-  },
-  {
-    url: "/imgs/abstract/5.jpg",
-    title: "Title 5",
-    id: 5,
-  },
-  {
-    url: "/imgs/abstract/6.jpg",
-    title: "Title 6",
-    id: 6,
-  },
-  {
-    url: "/imgs/abstract/7.jpg",
-    title: "Title 7",
-    id: 7,
-  },
-];

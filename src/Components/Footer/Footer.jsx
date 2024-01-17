@@ -13,7 +13,7 @@ export default function Footer() {
   const { setIsButtonHovering } = useCursorStore();
   return (
     <Reveal>
-      <div className="w-screen border-t-[1px] py-12">
+      <div className="w-screen border-t-[1px] py-12 bg-[#0D0C0C]">
         <div className="flex items-center justify-between w-screen h-full sm:flex-row flex-col gap-6">
           <div className="w-full flex items-center justify-center">
             <AnimatedText text={`Sahil Bishnoi`} childrenDelay={0.01} />
