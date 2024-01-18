@@ -1,9 +1,8 @@
 import React from "react";
 import { motion, useMotionValue, useSpring, useTransform } from "framer-motion";
-import { FiMousePointer } from "react-icons/fi";
 import { useCursorStore } from "@/StateManagment/zustandLib";
 import Image from "next/image";
-import Reveal from "../Reveal/Reveal";
+import Link from "next/link";
 
 export default function ProjectCard({ data, indNum }) {
   const { setIsHovering } = useCursorStore();
@@ -44,28 +43,29 @@ export default function ProjectCard({ data, indNum }) {
   };
 
   return (
+    <motion.div
+      onMouseMove={handleMouseMove}
+      key={indNum}
+      onMouseLeave={handleMouseLeave}
+      style={{
+        rotateY,
+        rotateX,
+        transformStyle: "preserve-3d",
+      }}
+      onMouseEnter={() => setIsHovering(true)}
+      className="relative xl:h-[80vh] md:h-[60vh] sm:h-[50vh] h-[30vh] w-full rounded-xl bg-gradient-to-br from-gray-100 to-gray-300 shrink-0 cursor-pointer "
+    >
       <motion.div
-        onMouseMove={handleMouseMove}
-        key={indNum}
-        onMouseLeave={handleMouseLeave}
         style={{
-          rotateY,
-          rotateX,
+          transform: "translateZ(50px)",
           transformStyle: "preserve-3d",
         }}
-        onMouseEnter={() => setIsHovering(true)}
-        className="relative xl:h-[80vh] md:h-[60vh] sm:h-[50vh] h-[30vh] w-full rounded-xl bg-gradient-to-br from-gray-100 to-gray-300 shrink-0 cursor-pointer "
+        whileTap={{
+          scale: 1.02,
+        }}
+        className="absolute inset-4 flex items-start pt-16 justify-center rounded-xl bg-transparent"
       >
-        <motion.div
-          style={{
-            transform: "translateZ(50px)",
-            transformStyle: "preserve-3d",
-          }}
-          whileTap={{
-            scale: 1.2,
-          }}
-          className="absolute inset-2 flex items-start pt-16 justify-center rounded-xl bg-transparent"
-        >
+        <Link href={`/work/${data.id}`}>
           <Image
             height={1960}
             width={1080}
@@ -74,8 +74,8 @@ export default function ProjectCard({ data, indNum }) {
             src={data.link}
             className="absolute top-0 left-0 rounded-xl h-full w-full brightness-75 object-cover"
           />
-        </motion.div>
-          
+        </Link>
       </motion.div>
+    </motion.div>
   );
 }

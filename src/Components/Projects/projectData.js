@@ -32,4 +32,48 @@ export const data = [
     ],
     link: "/images/zirxBg.png",
   },
+  {
+    id: "pp4",
+    title: "SideCup Family Golf",
+    description: "A Learning Project",
+    points: [
+      "Cloned an interective existing sports website",
+      "Learned how to use gsap different than usual",
+      "Learned different types of styling the structure",
+    ],
+    link: "/images/sideCupBg.png",
+  },
+  {
+    id: "pp5",
+    title: "Ink Map",
+    description: "Save Your Tasks Limitlessly",
+    points: [
+      "Designed an fully functional task saving web app",
+      "Learned how to use context api in react",
+      "Reduced the number of api calls by 40% by using local storage",
+    ],
+    link: "/images/inkMapBg.png",
+  },
+  {
+    id: "pp6",
+    title: "New Monkey",
+    description: "Fetch latest news anytime",
+    points: [
+      "Used news api to fetch news and articles",
+      "Impletented Infinite Scroll on news for infinite scrolling",
+      "Implemented different categories of fetching and showcasing data",
+    ],
+    link: "/images/newsMonkeyBg.png",
+  },
+  {
+    id: "pp7",
+    title: "Pass Gen",
+    description: "My own password generation web app",
+    points: [
+      "Implemented advance css animations",
+      "Structured an responsive website with all the animations",
+      "Learned regular expressions by generating strong password",
+    ],
+    link: "/images/passGenBg.png",
+  },
 ];

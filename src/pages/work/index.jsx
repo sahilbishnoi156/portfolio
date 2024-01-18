@@ -19,15 +19,15 @@ export default function Work() {
       <Carousel />
       <ProjectsDesc/>
       <div
-        onMouseEnter={() => setIsVideoHovering(true)}
-        onMouseLeave={() => setIsVideoHovering(false)}
+        
       >
-        <Reveal>
+        <Reveal >
           <HorizontalText
             text={
               "Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa Whoa"
             }
             rotation={3}
+            customFunc={setIsVideoHovering}
             className="border-2 bg-white text-black"
           />
         </Reveal>

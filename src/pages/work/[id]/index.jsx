@@ -2,14 +2,26 @@
 import Main from "@/Components/Main/Main";
 import { data } from "@/Components/Projects/projectData";
 import ScrollToTop from "@/Components/ScrollToTop/ScrollToTop";
+import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
+
 
 
 export default function Index() {
   const router = useRouter();
   const id = router.query.id;
   const details = data.find((project) => project.id === id);
+  if (!details) {
+    return (
+      <Main>
+        <div className="h-[60vh] flex items-center justify-center flex-col gap-8">
+          <h1 className="text-[4vw] text-red-500">Project Unavailable</h1>
+          <Link href="/work" className="border-2 px-4 py-2 rounded-xl hover:bg-white hover:text-black duration-200">Check other Projects</Link>
+        </div>
+      </Main>
+    )
+  }
   return (
     <Main>
         <ScrollToTop/>

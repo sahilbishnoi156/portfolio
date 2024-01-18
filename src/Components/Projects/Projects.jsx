@@ -5,7 +5,6 @@ import { data } from "./projectData";
 import AnimatedText from "../Reveal/AnimatedText";
 import ProjectCard from "./ProjectCard";
 import Link from "next/link";
-import Magnetic from "../magnetic";
 import Reveal from "../Reveal/Reveal";
 
 const ProjectsHeader = () => {
