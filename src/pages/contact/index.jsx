@@ -22,32 +22,54 @@ const LinkDiv = ({ data }) => {
             <Icon />
           </div>
         </div>
-        {(data.title !== 'Contact') ? <a href={(data.title !== 'Email') ?  data.link : `mailto:${data.link}`} target="_blank" className="absolute h-full w-full bg-white top-0 flex items-center justify-between left-0 text-black scale-y-0 origin-center group-hover:scale-100 duration-200">
-          <div className="ml-4">{data.title}</div>
-          <div className="mr-4 flex items-center justify-center gap-4">
-            {data.title === "Contact" && data.link}
-            <Icon color={'lightblue'} />
+        {data.title !== "Contact" ? (
+          <a
+            href={data.title !== "Email" ? data.link : `mailto:${data.link}`}
+            target="_blank"
+            className="absolute h-full w-full bg-white top-0 flex items-center justify-between left-0 text-black scale-y-0 origin-center group-hover:scale-100 duration-200"
+          >
+            <div className="ml-4">{data.title}</div>
+            <div className="mr-4 flex items-center justify-center gap-4 text-blue-500">
+              {data.title === "Contact" && data.link}
+              <Icon />
+            </div>
+          </a>
+        ) : (
+          <div className="absolute h-full w-full bg-white top-0 flex items-center justify-between left-0 text-black scale-y-0 origin-center group-hover:scale-100 duration-200">
+            <div className="ml-4">{data.title}</div>
+            <div className="mr-4 flex items-center justify-center gap-4">
+              {data.title === "Contact" && data.link}
+              <Icon />
+            </div>
           </div>
-        </a> :
-        <div className="absolute h-full w-full bg-white top-0 flex items-center justify-between left-0 text-black scale-y-0 origin-center group-hover:scale-100 duration-200">
-        <div className="ml-4">{data.title}</div>
-        <div className="mr-4 flex items-center justify-center gap-4">
-          {data.title === "Contact" && data.link}
-          <Icon />
-        </div>
-      </div>
-        }
+        )}
       </div>
     </Reveal>
   );
 };
 const linkArray = [
-  { title: "Contact", logo: IoCall, link:"8094229729" },
-  { title: "Email", logo: MdEmail,  link:"sahilbishnoi170@gmail.com" },
-  { title: "Linkdin", logo: FaLinkedinIn, link:"https://www.linkedin.com/in/sahil-poonia" },
-  { title: "Instagram", logo: LuInstagram, link:"https://www.instagram.com/s.ahilbishnoi_/?utm_source=qr" },
-  { title: "Twitter", logo: FaTwitter, link:"https://twitter.com/SahilBi59723409" },
-  { title: "Github", logo: FaGithub, link:"https://github.com/sahilbishnoi156" },
+  { title: "Contact", logo: IoCall, link: "+91 8094229729" },
+  { title: "Email", logo: MdEmail, link: "sahilbishnoi170@gmail.com" },
+  {
+    title: "Linkdin",
+    logo: FaLinkedinIn,
+    link: "https://www.linkedin.com/in/sahil-poonia",
+  },
+  {
+    title: "Instagram",
+    logo: LuInstagram,
+    link: "https://www.instagram.com/s.ahilbishnoi_/?utm_source=qr",
+  },
+  {
+    title: "Twitter",
+    logo: FaTwitter,
+    link: "https://twitter.com/SahilBi59723409",
+  },
+  {
+    title: "Github",
+    logo: FaGithub,
+    link: "https://github.com/sahilbishnoi156",
+  },
 ];
 
 const SocialLinks = () => {
@@ -77,13 +99,16 @@ export default function Index() {
       </div>
       <div className="flex items-center justify-center mb-16">
         <Magnetic>
+          <a href="mailto:sahilbishnoi170@gmail.com">
           <button
+            
             className="w-56 h-56 bg-white rounded-full text-black font-extrabold xl:text-[1.5vw] md:text-[2.5vw] text-[6vw]"
             onMouseEnter={() => setIsButtonHovering(true)}
             onMouseLeave={() => setIsButtonHovering(false)}
           >
             Email Me
           </button>
+          </a>
         </Magnetic>
       </div>
     </Main>

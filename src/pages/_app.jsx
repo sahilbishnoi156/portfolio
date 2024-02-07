@@ -4,6 +4,7 @@ import { useRouter } from "next/router";
 import { Mali } from "next/font/google";
 import { useAppStore } from "@/StateManagment/zustandLib";
 import React from "react";
+import Head from "next/head";
 
 
 const mali = Mali({
@@ -22,6 +23,13 @@ export default function App({ Component, pageProps }) {
   return (
     <AnimatePresence mode="wait">
       <motion.div key={router.pathname} className={mali.className}>
+      <Head>
+          <title>Sahil Bishnoi</title>
+          <meta
+            name="description"
+            content="Creative developer based in india, freelancer, currently persuing cse at Chitkara University, Patiala"
+          />
+        </Head>
         <Component {...pageProps} />
         <motion.div
           className="absolute top-0 left-0 w-full h-[100vh] bg-white origin-bottom z-50"

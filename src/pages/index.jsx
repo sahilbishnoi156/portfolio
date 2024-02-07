@@ -9,6 +9,7 @@ import Footer from "@/Components/Footer/Footer";
 import { useAppStore } from "@/StateManagment/zustandLib";
 import TechStack from "@/Components/TechStack/TechStack";
 import ScrollToTop from "@/Components/ScrollToTop/ScrollToTop";
+import Head from "next/head";
 
 export default function Home() {
   const { isLoading } = useAppStore();
@@ -37,7 +38,7 @@ export default function Home() {
     return <PreLoader />;
   } else {
     return (
-      <Main>
+      <Main>  
         <ScrollToTop />
         <Hero />
         <Description />

@@ -15,11 +15,11 @@ const Carousel = () => {
   const { scrollYProgress } = useScroll({
     target: targetRef,
   });
-  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-75%"]);
+  const x = useTransform(scrollYProgress, [0, 1], ["1%", "-84%"]);
 
   return (
     <div>
-      <div ref={targetRef} className="relative h-[300vh] md:block hidden">
+      <div ref={targetRef} className="relative h-[500vh] md:block hidden">
         <div className="sticky top-0 flex items-center h-screen overflow-hidden">
           <motion.div style={{ x }} className="flex gap-8">
             {data.map((card, index) => {
