@@ -2,11 +2,12 @@
 import Main from "@/Components/Main/Main";
 import { data } from "@/Components/Projects/projectData";
 import ScrollToTop from "@/Components/ScrollToTop/ScrollToTop";
+import { motion } from "framer-motion";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React from "react";
-
-
+import { FaArrowDownLong } from "react-icons/fa6";
+import styles from "@/Components/Carousel/carousel.module.css";
 
 export default function Index() {
   const router = useRouter();
@@ -43,6 +44,22 @@ export default function Index() {
               return <li key={point}>{index+1}) {point}</li>;
             })}
           </ul>
+        </div>
+        <div className="md:px-16 px-4 mt-8">
+          <a href={details.visitLink} target="_blank">
+          <motion.button
+            className={`rounded-2xl border-2 px-4 py-1 flex items-center justify-center gap-2 ${styles.button}`}
+            data-content="Visit"
+            whileTap={{
+              scale: 0.9,
+            }}
+          >
+            Visit
+            <span className="-rotate-[135deg]">
+              <FaArrowDownLong />
+            </span>
+          </motion.button>
+          </a>
         </div>
       </div>
     </Main>

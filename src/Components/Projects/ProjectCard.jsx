@@ -65,10 +65,12 @@ export default function ProjectCard({ data, indNum }) {
         }}
         className="absolute inset-4 flex items-start pt-16 justify-center rounded-xl bg-transparent"
       >
-        <Link href={`/work/${data.id}`}>
+        <Link href={`/work/${data.id}`} className="">
           <Image
-            height={1960}
-            width={1080}
+            fill
+            sizes="(max-width: 900px) 100vw,
+            (max-width: 1200px) 50vw,
+            33vw"
             quality={100}
             alt="not found"
             src={data.link}

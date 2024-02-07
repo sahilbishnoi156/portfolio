@@ -41,10 +41,6 @@ export default function Projects() {
               <Reveal objectAmount={0.1}>
                 <ProjectCard data={item} indNum={index} />
               </Reveal>
-              <div className="font-semibold text-white flex items-center justify-center flex-col mt-6" >
-                <h1>{item.title}</h1>
-                <p>{item.description}</p>
-              </div>
             </div>
           );
         })}

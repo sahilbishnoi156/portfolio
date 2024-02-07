@@ -3,6 +3,7 @@ export const data = [
     id: "pp1",
     title: "Sufferer",
     description: "A social media web application",
+    visitLink:"https://sufferer.vercel.app/",
     points: [
       "Node.js, Next.js, Tailwind CSS, MongoDB",
       "Implemented secure user authentication and authorization.",
@@ -13,6 +14,7 @@ export const data = [
   {
     id: "pp2",
     title: "Picture Print",
+    visitLink:"https://pictureprint.vercel.app/",
     description: "Pdf manupulation web app",
     points: [
       "Implemented functionality to extract images from PDF documents",
@@ -23,18 +25,8 @@ export const data = [
   },
   {
     id: "pp3",
-    title: "Zirx",
-    description: "My personal docs",
-    points: [
-      "Developed a personal task and document management system.",
-      "Designed an intuitive navigation system for seamless user interaction.",
-      "Generated links for easy download and sharing of files.",
-    ],
-    link: "/images/zirxBg.png",
-  },
-  {
-    id: "pp4",
     title: "SideCup Family Golf",
+    visitLink:"https://github.com/sahilbishnoi156/sports-website",
     description: "A Learning Project",
     points: [
       "Cloned an interective existing sports website",
@@ -44,8 +36,9 @@ export const data = [
     link: "/images/sideCupBg.png",
   },
   {
-    id: "pp5",
+    id: "pp4",
     title: "Ink Map",
+    visitLink:"https://github.com/sahilbishnoi156/InkMap",
     description: "Save Your Tasks Limitlessly",
     points: [
       "Designed an fully functional task saving web app",
@@ -55,8 +48,9 @@ export const data = [
     link: "/images/inkMapBg.png",
   },
   {
-    id: "pp6",
+    id: "pp5",
     title: "New Monkey",
+    visitLink:"https://github.com/sahilbishnoi156/NewsApp-Classbased",
     description: "Fetch latest news anytime",
     points: [
       "Used news api to fetch news and articles",
@@ -66,8 +60,9 @@ export const data = [
     link: "/images/newsMonkeyBg.png",
   },
   {
-    id: "pp7",
+    id: "pp6",
     title: "Pass Gen",
+    visitLink:"https://sahilbishnoi156.github.io/PASS-GEN/",
     description: "My own password generation web app",
     points: [
       "Implemented advance css animations",
