@@ -12,7 +12,7 @@ export default function HorizontalText({text, rotation, className, customFunc=(v
   const x = useTransform(scrollYProgress, [0, 1], ["80%", "0%"]);
   return (
     <div
-      className={`xl:h-[50vh] md:h-[40vh] sm:h-[30vh] h-[20vh] flex items-center justify-center text-gray-200 whitespace-nowrap overflow-hidden `}
+      className={`xl:h-[50vh] md:h-[40vh] sm:h-[30vh] h-[20vh] flex items-center justify-center text-gray-200 whitespace-nowrap overflow-hidden hover:cursor-none`}
       
     >
       <motion.div

@@ -1,6 +1,6 @@
 import React from "react";
 import { FaGithub } from "react-icons/fa";
-import { FaTwitter } from "react-icons/fa";
+import { FaXTwitter } from "react-icons/fa6";
 import { LuInstagram } from "react-icons/lu";
 import { FaLinkedinIn } from "react-icons/fa";
 import { FaArrowUpLong } from "react-icons/fa6";
@@ -13,7 +13,7 @@ export default function Footer() {
   const { setIsButtonHovering } = useCursorStore();
   return (
     <Reveal>
-      <div className="w-screen border-t-[1px] py-12 bg-[#0D0C0C]">
+      <div className="w-screen border-t-[1px] py-12 bg-[#0D0C0C] text-white">
         <div className="flex items-center justify-between w-screen h-full sm:flex-row flex-col gap-6">
           <div className="w-full flex items-center justify-center">
             <AnimatedText text={`Sahil Bishnoi`} childrenDelay={0.01} />
@@ -25,22 +25,25 @@ export default function Footer() {
           >
             <Magnetic>
               <a href="https://github.com/sahilbishnoi156" target="_blank">
-                <FaGithub className="hover:scale-150 hover:text-violet-500 duration-200" />
+                <FaGithub className="hover:scale-150 hover:text-purple-400 duration-200" />
               </a>
             </Magnetic>
             <Magnetic>
               <a href="www.linkedin.com/in/sahil-poonia" target="_blank">
-                <FaLinkedinIn className="hover:scale-150 hover:text-violet-500 duration-200" />
+                <FaLinkedinIn className="hover:scale-150 hover:text-blue-400 duration-200" />
               </a>
             </Magnetic>
             <Magnetic>
-              <a href="https://www.instagram.com/s.ahilbishnoi_/" target="_blank">
-                <LuInstagram className="hover:scale-150 hover:text-violet-500 duration-200"  />
+              <a
+                href="https://www.instagram.com/s.ahilbishnoi_/"
+                target="_blank"
+              >
+                <LuInstagram className="hover:scale-150 duration-200 hover:text-red-400" />
               </a>
             </Magnetic>
             <Magnetic>
               <a href="https://twitter.com/SahilBi59723409" target="_blank">
-                <FaTwitter className="hover:scale-150 hover:text-violet-500 duration-200" />
+                <FaXTwitter className="hover:scale-150 hover:text-purple-400 duration-200" />
               </a>
             </Magnetic>
           </div>

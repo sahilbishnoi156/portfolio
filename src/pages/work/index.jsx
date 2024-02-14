@@ -32,7 +32,7 @@ export default function Work() {
           />
         </Reveal>
       </div>
-      <div className="w-full flex items-center justify-center text-[8vw]">
+      <div className="w-full flex items-center justify-center text-[8vw] text-white">
         <div className="w-9/12 flex flex-col">
           <div className="flex items-center md:gap-16 gap-4">
             <AnimatedText text="LET'S" />

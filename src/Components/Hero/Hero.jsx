@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-img-element */
 import Image from "next/image";
 import React from "react";
 import heroImg from "@/Assets/hero_img.jpg";
@@ -17,7 +18,7 @@ const ScrollDown = () => {
         .split("")
         .map(
           (char, index) =>
-            `<span style="transform:rotate(${index * 8.21}deg)">${char}</span>`
+            `<span style="transform:rotate(${index * 11.51}deg)">${char}</span>`
         )
         .join("");
 
@@ -37,10 +38,10 @@ const ScrollDown = () => {
         <FaArrowDownLong />
       </motion.span>
       <div
-        className={`h-full w-full absolute text-xl rotate-[15deg] sm:block hidden ${styles.circle}`}
+        className={`h-full w-full absolute text-xl sm:block hidden ${styles.circle}`}
       >
         <p ref={text} className={styles.text}>
-          SCROLL DOWN - SCROLL DOWN -
+          SCROLL DOWN&nbsp; ⥈ &nbsp;SCROLL DOWN &nbsp;⥈
         </p>
       </div>
     </div>

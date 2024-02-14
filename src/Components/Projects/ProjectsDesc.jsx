@@ -14,7 +14,7 @@ export default function ProjectsDesc({className}) {
           </div>
           <div>
             <AnimatedText
-              text={`Combining unique design and rich technology, we build digital products exactly as they were designed, without shortcuts or simplifications`}
+              text={`Combining unique design and rich technology, I build digital products exactly as they were designed, without shortcuts or simplifications.`}
               TextClassName={"text-[28px]"}
               childrenDelay={0.001}
             />
@@ -27,7 +27,7 @@ export default function ProjectsDesc({className}) {
             <Reveal>
           <div className={styles.tags}>
               <p>E-commerce</p>
-              <p>Finance</p>
+              <p>Buisness</p>
               <p>Education</p>
               <p>Social</p>
               <p>Entertainment</p>

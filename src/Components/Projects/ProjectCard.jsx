@@ -53,7 +53,7 @@ export default function ProjectCard({ data, indNum }) {
         transformStyle: "preserve-3d",
       }}
       onMouseEnter={() => setIsHovering(true)}
-      className="relative xl:h-[80vh] md:h-[60vh] sm:h-[50vh] h-[30vh] w-full rounded-xl bg-gradient-to-br from-gray-100 to-gray-300 shrink-0 cursor-pointer "
+      className="relative xl:h-[80vh] md:h-[60vh] sm:h-[50vh] h-[30vh] w-full rounded-xl bg-gradient-to-br from-gray-100 to-gray-300 shrink-0 cursor-pointer flex items-end justify-center"
     >
       <motion.div
         style={{
@@ -63,9 +63,9 @@ export default function ProjectCard({ data, indNum }) {
         whileTap={{
           scale: 1.02,
         }}
-        className="absolute inset-4 flex items-start pt-16 justify-center rounded-xl bg-transparent"
+        className="relative h-[90%] w-[90%] hover:h-[98%] hover:w-[98%] duration-150"
       >
-        <Link href={`/work/${data.id}`} className="">
+        <Link href={`/work/${data.id}`}>
           <Image
             fill
             sizes="(max-width: 900px) 100vw,

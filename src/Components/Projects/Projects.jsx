@@ -6,10 +6,11 @@ import AnimatedText from "../Reveal/AnimatedText";
 import ProjectCard from "./ProjectCard";
 import Link from "next/link";
 import Reveal from "../Reveal/Reveal";
+import Button from "../Button/Button";
 
 const ProjectsHeader = () => {
   return (
-    <div className="w-full text-[6vw] font-semibold flex flex-col leading-[7vw] xl:px-[10vw] md:px-[9vw] px-[4vw] mb-24">
+    <div className="w-full text-[6vw] font-semibold flex flex-col leading-[7vw] xl:px-[10vw] md:px-[9vw] px-[4vw] mb-24 text-white">
       <AnimatedText
         className="text-[7vw]"
         text="VISUAL"
@@ -48,15 +49,9 @@ export default function Projects() {
       <div
         className="w-full flex items-center justify-center mt-12"
         data-scroll
-        data-scroll-speed={`0.2`}
+        data-scroll-speed={`0.3`}
       >
-        <Link
-          href="/work"
-          className={`border-2 px-8 py-2 rounded-full overflow-hidden ${styles.button}`}
-          data-content="MORE"
-        >
-          MORE
-        </Link>
+        <Button link="/work" content="MORE" styles={styles} />
       </div>
     </div>
   );
